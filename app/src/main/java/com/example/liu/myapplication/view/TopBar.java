@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -32,13 +33,16 @@ public class TopBar extends RelativeLayout {
     private int mTitleTextColor;
     private String mTitle;
 
+    // 映射传入的接口对象
+    private topbarClickListener mListener;
+
 
 
     public TopBar(Context context, AttributeSet attrs) {
         super(context, attrs);
 
 
-        setBackgroundColor(0xFFF59563);
+        setBackgroundColor(context.getResources().getColor(R.color.white));
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.TopBar);
         mLeftTextColor = ta.getColor(R.styleable.TopBar_leftTextColor, 0);
@@ -84,9 +88,34 @@ public class TopBar extends RelativeLayout {
         addView(mTitleView, mTitleParams);
 
 
+        mRightButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.rightClick();
+            }
+        });
+
+        mLeftButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.leftClick();
+            }
+        });
+
     }
 
 
+    public void setOnTopbarClickListener(topbarClickListener mListener) {
+        this.mListener = mListener;
+    }
+
+
+    public interface topbarClickListener {
+
+        void leftClick();
+
+        void rightClick();
+    }
 
 
 }
