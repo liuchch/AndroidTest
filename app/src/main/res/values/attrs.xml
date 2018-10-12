@@ -14,5 +14,11 @@
         <attr name="rightText" format="string"/>
 
     </declare-styleable>
+    
+    <declare-styleable name="CircleProgressView">
+        
+        <attr name="SweepAngleValue" format="float"/>
+        
+    </declare-styleable>
 
 </resources>

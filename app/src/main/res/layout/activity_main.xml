@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -21,18 +21,24 @@
     <com.example.liu.myapplication.view.TopBar
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        custom:leftBackground="@color/colorPrimaryDark"
-        custom:leftText="Back"
-        custom:leftTextColor="@color/colorAccent"
-        custom:rightText="go"
-        custom:rightTextColor="@color/colorPrimaryDark"
-        custom:rightBackground="@color/colorAccent"
-        custom:title="title"
-        custom:titleTextColor="@color/colorPrimary"
-        custom:titleTextSize="20dp"
+        app:leftBackground="@color/colorPrimaryDark"
+        app:leftText="Back"
+        app:leftTextColor="@color/colorAccent"
+        app:rightText="go"
+        app:rightTextColor="@color/colorPrimaryDark"
+        app:rightBackground="@color/colorAccent"
+        app:title="title"
+        app:titleTextColor="@color/colorPrimary"
+        app:titleTextSize="20dp"
         />
 
 
+    <com.example.liu.myapplication.view.CircleProgressView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        app:SweepAngleValue="160"
+        />
 
 
 </LinearLayout>
