@@ -40,5 +40,10 @@
         app:SweepAngleValue="160"
         />
 
+    <com.example.liu.myapplication.view.RectListView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
 
 </LinearLayout>

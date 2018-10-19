@@ -66,6 +66,7 @@ public class CircleProgressView extends View {
         canvas.drawArc(mArcRectF, 0, mSweepAngle, false, mArcPaint);
         //绘制文字
         canvas.drawText(mShowText, 0, mShowText.length(), mCircleXY, mCircleXY + (mShowTextSize/4), mTextPaint);
+
     }
 
     private void initView() {
