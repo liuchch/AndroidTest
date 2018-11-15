@@ -89,10 +89,26 @@ public class SmartScrollView extends ViewGroup {
                 mLastY = y;
                 break;
             case MotionEvent.ACTION_UP:
-                int dScrolly = checkAlignment();
-                if (dScrolly > 0) {
-                    if (dScrolly < mScreenHeight / 3) {
-                        mScroller.startScroll(0, getScrollY(), 0, -dScrolly);
+                int dScrollY = checkAlignment();
+                if (dScrollY > 0) {
+                    if (dScrollY < mScreenHeight / 3) {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -dScrollY);
+                    } else {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, mScreenHeight - dScrollY);
+                    }
+                } else {
+                    if (-dScrollY < mScreenHeight / 3) {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -dScrollY);
+                    } else {
+                        mScroller.startScroll(
+                                0, getScrollY(),
+                                0, -mScreenHeight - dScrollY);
                     }
                 }
 
@@ -112,6 +128,15 @@ public class SmartScrollView extends ViewGroup {
             return lastPrev;
         } else {
             return -lastNext;
+        }
+    }
+
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        if (mScroller.computeScrollOffset()) {
+            scrollTo(0, mScroller.getCurrY());
+            postInvalidate();
         }
     }
 }
