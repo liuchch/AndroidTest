@@ -63,7 +63,7 @@ public class RectListView extends View {
         }
 
         canvas.restore();
-        canvas.drawText("123456789", 0, 25, mPaintText);
+        canvas.drawText("123456789", 0, 50, mPaintText);
 
     }
 }
