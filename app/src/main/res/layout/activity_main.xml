@@ -12,6 +12,12 @@
         android:text="打开miui省电管理"
         android:onClick="on1Clicked"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开miui省电管理"
+        android:onClick="on2Clicked"
+        />
     <com.example.liu.myapplication.view.NewTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
