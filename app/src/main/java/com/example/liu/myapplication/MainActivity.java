@@ -21,4 +21,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void on2Clicked(View view) {
+        Intent intent = new Intent(this, TestSmartScollViewActivity.class);
+        startActivity(intent);
+    }
+
 }
