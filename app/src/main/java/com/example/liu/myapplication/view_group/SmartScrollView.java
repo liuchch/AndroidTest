@@ -82,9 +82,9 @@ public class SmartScrollView extends ViewGroup {
                 if (getScrollY() < 0) {
                     dy = 0;
                 }
-                if (getScrollY() > getHeight() - mScreenHeight) {
-                    dy = 0;
-                }
+//                if (getScrollY() > getHeight() - mScreenHeight) {
+//                    dy = 0;
+//                }
                 scrollBy(0, dy);
                 mLastY = y;
                 break;
