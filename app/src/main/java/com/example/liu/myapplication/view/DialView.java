@@ -2,6 +2,7 @@ package com.example.liu.myapplication.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -20,6 +21,7 @@ public class DialView extends View {
     private Paint paintDegree;
     private int radius;
 
+
     public DialView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
@@ -36,9 +38,23 @@ public class DialView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        drawCircle(canvas);
-        drawDegree(canvas);
-        drawPointer(canvas);
+        canvas.drawColor(Color.WHITE);
+        Paint paint = new Paint();
+        paint.setColor(Color.BLUE);
+        canvas.drawCircle(150,150,100,paint);
+
+        canvas.saveLayerAlpha(0,0,600,600,127,Canvas.ALL_SAVE_FLAG);
+        paint.setColor(Color.RED);
+        canvas.drawCircle(200,200,100,paint);
+        canvas.restore();
+        canvas.saveLayerAlpha(0,0,600,600,127,Canvas.ALL_SAVE_FLAG);
+        paint.setColor(Color.YELLOW);
+        canvas.drawCircle(50,50,100,paint);
+        canvas.restore();
+
+//        drawCircle(canvas);
+//        drawDegree(canvas);
+//        drawPointer(canvas);
     }
 
     private void drawCircle(Canvas canvas) {
